@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Yelp Location</string>
+
+    <string name="title_activity_maps">Map</string>
+
+    <string name="miles_away">%.2f miles away</string>
+
+    <string name="open">OPEN</string>
+    <string name="closed">CLOSED</string>
+
+    <string name="map">Display Map</string>
+
+    <string name="gps_network_not_enabled">Location Services Not Enabled</string>
+    <string name="open_location_settings">Open Location Settings</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="retry">RETRY</string>
+
+    <string name="error_no_internet">No Internet Connection</string>
+    <string name="error_location_services_not_connected">Unable to determine location</string>
+    <string name="error_geocode">Unable to determine location</string>
+    <string name="error_yelp_service">Unable to retrieve business listings</string>
+</resources>

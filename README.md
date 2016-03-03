@@ -1,6 +1,6 @@
 Implementation of the [Belly Mobile Location Application Coding Challenge](https://tech.bellycard.com/join/#mobile-location-application):
 
-Build a simple application that consumes a public location based rest service (Foursquare, Yelp, etc.) to query a list of businesses near you. Your application should display and sort those businesses based on distance from the device’s current location. Use the provided [Photoshop document](https://tech.bellycard.com/challenges/iPhone-List-View.psd) when building the user interface for displaying those businesses.
+Build a simple application that consumes a public location based rest service (Foursquare, Yelp, etc.) to query a list of businesses near you. Your application should display and sort those businesses based on distance from the deviceâ€™s current location. Use the provided [Photoshop document](https://tech.bellycard.com/challenges/iPhone-List-View.psd) when building the user interface for displaying those businesses.
 
 Additionally the application should use a caching mechanism to store your queried data so it can still be displayed if the device cannot access the internet.
 
@@ -17,7 +17,7 @@ In order for the app to function properly, an API key for Yelp must be included 
     ConsumerKey="???"
     ConsumerSecret="???"
     Token="???"
-    TokenSecret="???"`
+    TokenSecret="???"
 
 ### Google Maps API Key is required.
 

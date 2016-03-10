@@ -1,11 +1,14 @@
 package com.icheung.yelplocation.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Business implements Serializable {
+public class Business implements Parcelable {
     private String name;
     @SerializedName("image_url") private String thumb;
     private double rating;
@@ -80,4 +83,53 @@ public class Business implements Serializable {
     public void setDistance(double distance) {
         this.distance = distance;
     }
+
+    protected Business(Parcel in) {
+        name = in.readString();
+        thumb = in.readString();
+        rating = in.readDouble();
+        isClosed = in.readByte() != 0x00;
+        location = (Location) in.readValue(Location.class.getClassLoader());
+        if (in.readByte() == 0x01) {
+            categories = new ArrayList<List<String>>();
+            in.readList(categories, ArrayList.class.getClassLoader());
+        } else {
+            categories = null;
+        }
+        distance = in.readDouble();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(thumb);
+        dest.writeDouble(rating);
+        dest.writeByte((byte) (isClosed ? 0x01 : 0x00));
+        dest.writeValue(location);
+        if (categories == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(categories);
+        }
+        dest.writeDouble(distance);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Business> CREATOR = new Parcelable.Creator<Business>() {
+        @Override
+        public Business createFromParcel(Parcel in) {
+            return new Business(in);
+        }
+
+        @Override
+        public Business[] newArray(int size) {
+            return new Business[size];
+        }
+    };
 }

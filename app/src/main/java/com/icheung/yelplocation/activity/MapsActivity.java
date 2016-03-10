@@ -30,7 +30,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        mBusinesses = (ArrayList<Business>) getIntent().getSerializableExtra("data");
+        mBusinesses = getIntent().getParcelableArrayListExtra(KEY_DATA);
     }
 
 

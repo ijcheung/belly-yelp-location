@@ -211,7 +211,7 @@ public class BusinessFragment extends Fragment implements
         switch (item.getItemId()) {
             case R.id.map:
                 Intent i = new Intent(getContext(), MapsActivity.class);
-                i.putExtra(MapsActivity.KEY_DATA, mBusinesses);
+                i.putParcelableArrayListExtra(MapsActivity.KEY_DATA, mBusinesses);
                 startActivity(i);
                 return true;
             default:

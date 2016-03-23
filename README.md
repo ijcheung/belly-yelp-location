@@ -10,6 +10,11 @@ As a bonus objective, we would love to see you display queried locations on a ma
 
 Feel free to use any open source project dependencies you are comfortable with. Your code should be hosted on GitHub.
 
+## Getting Started
+
+This project uses the Gradle build system.  To build this project, use the
+"gradlew build" command or use "Import Project" in Android Studio.
+
 ### Yelp API Key is required.
 
 In order for the app to function properly, an API key for Yelp must be included with the build.

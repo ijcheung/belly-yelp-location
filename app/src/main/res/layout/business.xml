@@ -7,7 +7,7 @@
     android:layout_marginTop="@dimen/activity_vertical_margin"
     android:layout_marginBottom="@dimen/activity_vertical_margin"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
-    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground">
@@ -25,42 +25,51 @@
             android:scaleType="fitCenter"
             android:adjustViewBounds="true" />
     </android.support.v7.widget.CardView>
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/framed"
         android:layout_toEndOf="@+id/framed"
         android:layout_toLeftOf="@+id/status"
         android:layout_toStartOf="@+id/status"
-        android:orientation="vertical"
-        android:id="@+id/bloc"
+        android:id="@+id/name"
+        android:gravity="start"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            tools:text="Name" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/distance"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/category"
-            android:drawableLeft="@drawable/ic_restaurant"
-            android:drawableStart="@drawable/ic_restaurant"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-    </LinearLayout>
+        android:paddingRight="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        tools:text="Name" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/framed"
+        android:layout_toEndOf="@+id/framed"
+        android:layout_toLeftOf="@+id/chevron"
+        android:layout_toStartOf="@+id/chevron"
+        android:layout_below="@+id/name"
+        android:id="@+id/distance"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/framed"
+        android:layout_toEndOf="@+id/framed"
+        android:layout_toLeftOf="@+id/chevron"
+        android:layout_toStartOf="@+id/chevron"
+        android:layout_below="@+id/distance"
+        android:id="@+id/category"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawableLeft="@drawable/ic_restaurant"
+        android:drawableStart="@drawable/ic_restaurant"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/chevron"
         android:layout_toStartOf="@+id/chevron"
-        android:layout_alignBaseline="@+id/bloc"
+        android:layout_alignBaseline="@+id/name"
         android:id="@+id/status"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
         tools:text="@string/open" />
